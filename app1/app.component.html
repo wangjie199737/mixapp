@@ -1,0 +1,32 @@
+<!-- 第一次课，第二次课 -->
+    输入框：
+    <input type="text" [(ngModel)]="username" (keydown)="addTodo($event)">
+    <h2>正在进行:<span>{{todolist.length}}</span></h2>  
+    <ul>
+        <li *ngFor='let item of todolist ;let i=index;' >   
+            <input type="checkbox" (click)="changeTodo(i,true)" >
+            {{item.username}}
+            <button (click)='deleteTodo(i,true)'>删除</button>
+        </li>
+    </ul>
+    <h2>已经完成: <span>{{donelist.length}}</span></h2> 
+    <ul>
+        <li *ngFor='let item of donelist ;let i=index;' >  
+          <input type="checkbox" (click)="changeTodo(i,false)" >
+            {{item.username}}
+            <button (click)='deleteTodo(i,false)'>删除</button>
+        </li>
+    </ul>
+
+<!-- 第三次课 -->
+<app-parent></app-parent>
+<!-- 构造函数以及原型、
+数据类型
+object.keys()
+DOM节点的操作、属性
+页面优化、页面回流、页面重绘
+文档碎片
+正则表达式
+解构赋值
+数组、字符串的方法
+ -->
