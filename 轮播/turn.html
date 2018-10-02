@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        img{
+            margin-top: 20px;
+            margin-left: 150px;
+            float: left;
+            display: none;
+            z-index: 5;
+        }
+    </style>
+    <title>轮播</title>
+</head>
+<body>
+    <img src="img/1.jpg" style="display:block"/>
+    <img src="img/2.jpg"/>
+    <img src="img/3.jpg"/>
+    <img src="img/5.jpg"/>
+    <img src="img/6.jpg"/>
+    <img src="img/7.jpg"/>
+    <img src="img/8.jpg"/>
+    <img src="img/9.jpg"/>
+</body>
+<script>
+    var imgs=document.getElementsByTagName("img");
+    var i=0;
+    function imgTab(){
+		imgs[i%8].style.display='none';
+		i++;
+		imgs[i%8].style.display='block';
+	}
+	var timer=setInterval(function(){
+		imgTab();
+	},1500)
+
+</script>
+</html>
