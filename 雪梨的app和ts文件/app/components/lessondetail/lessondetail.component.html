@@ -1,0 +1,24 @@
+<div class="container">
+  <!-- <h3>{{(lesson|async)?.id}}</h3> 请求过来是一个数组的时候 async 异步管道--> 
+
+    <h3>
+      同步课/{{lesson?.lessonName}}
+    </h3>
+    <ul class='list'>
+      <li [class.active]='true'>简介</li>
+      <li [ngClass]="{'active':true}">互动</li>
+      <li [style.color]="'pink'">任务{{lesson?.task}}</li>
+      <li [ngStyle]="{'color':'green','font-size':'30px'}"> 成员{{lesson?.person}}</li>
+    </ul>
+  </div>
+  <input checked type="radio" (click)="change($event)" value="1" name="num">111
+  <input type="radio" (click)="change($event)" value="2" name="num">222
+  <input type="radio" (click)="change($event)" value="3" name="num">333
+  <span [ngSwitch]="num">
+  <div *ngSwitchCase="1">1</div>
+  <div *ngSwitchCase="2">2</div>
+  <div *ngSwitchCase="3">3</div>
+  <p>{{jsonObject|json}}</p>
+  <!-- 管道 -->
+  <p>{{'hehehhdh'|uppercase}}</p>
+  <p>{{date|date:'y-MM-dd E'}}</p>
