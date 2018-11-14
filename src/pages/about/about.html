@@ -1,0 +1,41 @@
+<ion-content>
+  <ion-searchbar placeholder='搜索好物'>
+      [(ngModel)]="myInput"
+      [showCancelButton]="shouldShowCancel"
+      (ionInput)="onInput($event)"
+      (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+  <img src="assets/imgs/shang1.png">
+  <ul class="navList">
+    <li (click)="isClick(0)" [class.first]="isActive==0">客厅</li>
+    <li (click)="isClick(1)" [class.first]="isActive==1">卧室</li>
+    <li (click)="isClick(2)" [class.first]="isActive==2">餐厅</li>
+    <li (click)="isClick(3)" [class.first]="isActive==3">书房</li>
+    <li (click)="isClick(4)" [class.first]="isActive==4">门厅</li>
+  </ul>
+  <div [ngSwitch]="isActive">
+    <div *ngSwitchCase="0">
+        <span class="word">—————沙发—————</span><ion-icon name="ios-funnel-outline"></ion-icon>
+        <div class="div1">
+          <img src="assets/imgs/1.png" width="150px;" class="img1">
+          <img src="assets/imgs/2.png" width="150px;" class="img1">
+          <img src="assets/imgs/3.png" width="150px;" class="img1">
+          <img src="assets/imgs/4.png" width="150px;" class="img1">
+        </div>
+    </div>
+    <div *ngSwitchCase="1">
+      这是卧室
+    </div>
+    <div *ngSwitchCase="2">
+      这是餐厅
+    </div>
+    <div *ngSwitchCase="3">
+      这是书房
+    </div>
+    <div *ngSwitchCase="4">
+      这是门厅
+    </div>
+  </div>
+  
+  
+</ion-content>
